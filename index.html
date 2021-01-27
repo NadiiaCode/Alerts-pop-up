@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alerts pop up</title>
+  </head>
+  <body>
+    <div id="home">
+      <div id="center" class="glass">
+        <h1>Alert!</h1>
+        <p>
+          This is how to make alerts pop up from top, bottom, left and right.
+        </p>
+        <button class="big button" onclick="quit()">Continue</button>
+      </div>
+
+      <div id="buttons">
+        <button class="button2 btn" onclick="topBtn()" id="b1">Top</button>
+        <button class="button2 btn" onclick="rightBtn()" id="b2">Right</button>
+        <button class="button2 btn" onclick="bottomBtn()" id="b3">
+          Bottom
+        </button>
+        <button class="button2 btn" onclick="leftBtn()" id="b4">Left</button>
+      </div>
+    </div>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap");
+      * {
+        background-image: linear-gradient(
+          to right,
+          #ff0091,
+          #f24ba4,
+          #e46bb2,
+          #d684bb,
+          #c998bf,
+          #c998bf,
+          #c998bf,
+          #c998bf,
+          #d684bb,
+          #e46bb2,
+          #f24ba4,
+          #ff0091
+        );
+        font-family: "DM Mono", monospace;
+      }
+
+      #home {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 30px;
+      }
+
+      #center {
+        width: 95vw;
+        padding-bottom: 25px;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 10px;
+        box-shadow: 0 0 25px 0 #be5285;
+        color: #000000;
+      }
+
+      .button {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid transparent;
+        background: #ff0091;
+        color: #000000;
+        transition: 0.5s;
+      }
+
+      .big {
+        font-size: 23px;
+      }
+
+      *:focus {
+        outline: none;
+        border: 0px solid transparent;
+      }
+
+      button:active {
+        transform: scale(1.4);
+        transition: 0.4s;
+      }
+
+      #buttons {
+        position: fixed;
+        display: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        top: 15px;
+      }
+
+      .button2 {
+        margin: 25px;
+        padding: 5px;
+        font-size: 22px;
+        letter-spacing: 2px;
+        border-radius: 15px;
+        border: 0px solid transparent;
+        box-shadow: 0 0 10px 0 #df0480;
+        background: #ff0091;
+        color: black;
+        transition: 0.5s;
+      }
+    </style>
+
+    <script>
+      function alert() {
+        document.getElementById("center").style =
+          "transform:translate(0px, 0px);";
+        document.getElementById("center").style.transition = "0.7s";
+      }
+      setTimeout(alert, 100);
+
+      function quit() {
+        document.getElementById("center").style =
+          "transform:translate(0px, 900px);";
+        document.getElementById("center").style.transition = "1s";
+      }
+
+      function topBtn() {
+        document.getElementById("center").style =
+          "transform:translateY(-900px)";
+        setTimeout(exit, 100);
+      }
+
+      function exit() {
+        document.getElementById("center").style = "transform:translateY(0px )";
+        document.getElementById("center").style.transition = "1s";
+      }
+
+      function rightBtn() {
+        document.getElementById("center").style = "transform:translateX(900px)";
+        setTimeout(exit, 100);
+      }
+
+      function bottomBtn() {
+        document.getElementById("center").style = "transform:translateY(900px)";
+        setTimeout(exit, 100);
+      }
+
+      function leftBtn() {
+        document.getElementById("center").style =
+          "transform:translateX(-900px)";
+        setTimeout(exit, 100);
+      }
+    </script>
+  </body>
+</html>
